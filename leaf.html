@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body>div {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  /* background: linear-gradient(#fff8ef, #fff) */
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.leaf {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* transform: rotateX(); */
+}
+
+.ball::before, .leaf::before {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background: radial-gradient(circle at 25% bottom, #533225 8px, #e0c6c6 9px, transparent 8px), linear-gradient(#7e503d, #61392a);
+  clip-path: polygon(78% 82%, 87% 66%, 98% 25%, 100% 0%, 82% 0%, 80% 24%, 73% 51%, 61% 71%, 46% 81%, 29% 85%, 14% 90%, 19% 97%, 38% 99%, 59% 97%, 67% 93%);
+  content: '';
+}
+
+.leaf::before {
+  bottom: 0;
+  right: 50%;
+  transform: translate(2px, 99%);
+}
+
+.finger {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(-45deg, green, olivedrab, olive);
+  transform-origin: bottom right;
+}
+
+.finger::after {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 2px;
+  height: 115%;
+  background-color: #7caf7f;
+  content: '';
+  transform-origin: center;
+  border-radius: 50%;
+  transform: translateX(10px) rotate(-45deg);
+}
+
+.finger:nth-child(1) {
+  transform: scale(.45) rotate(-70deg) skew(20deg, 20deg);
+  border-radius: 0 10px 0 50%;
+}
+
+.finger:nth-child(2) {
+  transform: scale(.8) rotate(-34deg) skew(25deg, 25deg);
+  border-radius: 0 10px 0 50%;
+}
+
+.finger:nth-child(3) {
+  transform: scale(.9) rotate(7deg) skew(23deg, 23deg);
+  border-radius: 0 10px 0 40px;
+}
+
+.finger:nth-child(4) {
+  transform: scale(1) rotate(45deg) skew(28deg, 28deg);
+  border-radius: 0 20px;
+}
+
+.finger:nth-child(5) {
+  transform: scale(.9) rotate(83deg) skew(23deg, 23deg);
+  border-radius: 0 40px 0 10px;
+}
+
+.finger:nth-child(7) {
+  transform: scale(.8) rotate(124deg) skew(25deg, 25deg);
+  border-radius: 0 50% 0 10px;
+}
+
+.finger:nth-child(6) {
+  transform: scale(.45) rotate(161deg) skew(20deg, 20deg);
+  border-radius: 0 50% 0 10px;
+}
+
+.ball {
+  position: relative;
+  margin-left: 120px;
+  margin-bottom: -80px;
+  width: 100px;
+}
+
+.ball>div {
+  width: 100px;
+  height: 100px;
+  background: repeating-linear-gradient(45deg, transparent, #533225 10px), repeating-linear-gradient(transparent, #533225 6px), repeating-linear-gradient(25deg, transparent, #c57353 10px);
+  background-color: #533225;
+  clip-path: polygon(51% 0, 68% 9%, 80% 12%, 94% 27%, 95% 42%, 100% 61%, 94% 80%, 79% 88%, 69% 99%, 51% 100%, 39% 95%, 23% 93%, 14% 82%, 5% 76%, 0 61%, 5% 48%, 5% 32%, 13% 20%, 23% 8%, 38% 3%);
+}
+
+.ball::before {
+  top: 0;
+  right: 50%;
+  transform: translate(2px, -99%) scaleY(-1);
+}
+  </style>
+  <div>
+    <div class="content">
+      <div class="leaf">
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+      </div>
+      <div class="ball">
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

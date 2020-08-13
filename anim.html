@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    @keyframes jog {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(20px, 20px);
+      }
+
+      50% {
+        transform: translate(40px, 20px);
+      }
+
+      75% {
+        transform: translate(60px, 0px);
+      }
+    }
+
+    @keyframes jag {
+      90% {
+        transform: translate(50px, 50px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body>div {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      height: 100vh;
+      /* background: linear-gradient(#fff8ef, #fff) */
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hey {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: olive;
+      /* margin-right: -50px; */
+    }
+
+
+
+    .hey::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50%;
+      content: '';
+      background-color: rgba(0, 0, 0, 0.5);
+      animation-duration: 3s;
+      animation-name: jag;
+      animation-delay: 2s;
+      /* animation-iteration-count: infinite; */
+      animation-timing-function: linear;
+    }
+
+    .hey:hover::after {
+      z-index: 2;
+      animation-duration: 3s;
+      animation-name: jog;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  </style>
+  <div>
+    <div class="content">
+      <div class="hey"></div>
+      <div class="hey"></div>
+      <div class="hey"></div>
+      <div class="hey"></div>
+      <div class="hey"></div>
+    </div>
+    <div class="content">
+      <div class="hey"></div>
+      <div class="hey"></div>
+      <div class="hey"></div>
+      <div class="hey"></div>
+      <div class="hey"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>

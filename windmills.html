@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background: linear-gradient(#b8b8ce, #8484f3, #b65cda);
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+.windmills {
+  display: flex;
+  justify-content: space-around;
+}
+
+.windmill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center bottom;
+}
+
+.top {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(to bottom, #4b4b4b, #222222);
+  border-radius: 50%;
+  margin-bottom: 2px;
+  animation-duration: 10s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.windmill:nth-child(2) {
+  transform: scale(.8);
+}
+
+.windmill:nth-child(3) {
+  transform: scale(.7);
+}
+
+.windmill:nth-child(2)>.top {
+  animation-duration: 6s;
+}
+
+.windmill:nth-child(3)>.top {
+  animation-duration: 12s;
+}
+
+.blade {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(32%, -10px);
+  transform-origin: 50% bottom;
+}
+
+.blade:nth-child(1) {
+  transform: translateX(72%) rotate(120deg) translateY(-6px);
+}
+
+.blade:nth-child(2) {
+  transform: translateX(62%) rotate(240deg) translateY(-12px);
+}
+
+.length {
+  width: 20px;
+  height: 180px;
+  background: linear-gradient(to right, #4b4b4b, #9c9c9c);
+  border-top-left-radius: 16px 100%;
+  border-top-right-radius: 4px;
+  /* weird line */
+  transform: translateY(1px)
+}
+
+.connector {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  background: linear-gradient(to right, #4b4b4b, #9c9c9c);
+  clip-path: polygon(74% 100%, 74% 85%, 82% 65%, 100% 49%, 100% 0%, 2% 0%, 28% 15%, 37% 26%, 39% 40%, 42% 100%)
+}
+
+.bottom {
+  width: 8px;
+  border-right: 6px solid transparent;
+  border-bottom: 350px solid #4b4b4b;
+  border-left: 6px solid transparent;
+}
+
+.ground {
+  width: 100vw;
+  height: 50px;
+  background: linear-gradient(#385719, #273b13);
+}
+  </style>
+  <div class="content">
+    <div class="windmills">
+      <div class="windmill">
+        <div class="top">
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+        </div>
+        <div class="bottom"></div>
+      </div>
+      <div class="windmill">
+        <div class="top">
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+        </div>
+        <div class="bottom"></div>
+      </div>
+      <div class="windmill">
+        <div class="top">
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+          <div class="blade">
+            <div class="length"></div>
+            <div class="connector"></div>
+          </div>
+        </div>
+        <div class="bottom"></div>
+      </div>
+    </div>
+    <div class="ground"></div>
+  </div>
+</body>
+
+</html>

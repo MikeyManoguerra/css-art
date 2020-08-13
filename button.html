@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button</title>
+</head>
+
+<body>
+  <style>
+    @keyframes jog {
+      0% {
+        /* text-shadow: 10px 10px 2px green; */
+      }
+
+      50% {
+        text-shadow:
+        -10px -10px 2px red,
+        10px -10px 2px blue,
+        10px 10px 2px green;
+
+      }
+
+      100% {
+        /* text-shadow: 10px 10px 2px green; */
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .content {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(#fff8ef, #fff)
+    }
+
+    .content>div {
+      display: flex;
+      justify-content: center;
+    }
+
+    h1 {
+      position: relative;
+      text-shadow:
+        0 0 2px red,
+        0 0 2px blue,
+        0 0 2px green;
+      animation-duration: 3s;
+      animation-name: jog;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  </style>
+  <div>
+    <div class="content">
+      <h1>big text big text</h1>
+    </div>
+  </div>
+
+</body>
+
+</html>

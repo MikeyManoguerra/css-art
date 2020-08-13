@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+ body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(#fff8ef, #fff)
+}
+
+.content>div {
+  display: flex;
+  justify-content: center;
+}
+
+.top {
+  position: relative;
+  z-index: 2;
+}
+
+.top>div:first-child {
+  position: relative;
+  width: 100px;
+  height: 25px;
+  margin-bottom: -26px;
+  border-bottom-right-radius: 50% 18px;
+  border-bottom-left-radius: 50% 18px;
+  background: radial-gradient(ellipse at top center, #927754, tan);
+  z-index: 1;
+}
+
+.top>div:first-child::after {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(black 8px, tan 6px, #927754);
+  transform: rotateX(72deg);
+  transform-origin: bottom center;
+  content: '';
+}
+
+.top>div:last-child {
+  position: relative;
+  width: 100px;
+  height: 28px;
+  background-color: #8a775e;
+  border-bottom-right-radius: 20px 80%;
+  border-bottom-left-radius: 20px 80%;
+}
+
+.top>div:last-child::after {
+  position: absolute;
+  top: 6px;
+  right: 50%;
+  width: 80px;
+  height: 28px;
+  border-bottom-right-radius: 50% 10px;
+  border-bottom-left-radius: 50% 10px;
+  background-color: #8a775e;
+  transform: translateX(50%);
+  content: '';
+}
+
+.thread {
+  position: relative;
+  width: 80px;
+  height: 125px;
+  margin-top: -20px;
+  margin-right: auto;
+  margin-left: auto;
+  background: repeating-radial-gradient(circle at left -50%, transparent, transparent 5px, #33383d 6px, transparent 7px, transparent, transparent 20px, #33383d 21px), repeating-radial-gradient(circle at right -50%, transparent, transparent 12px, #33383d 13px, transparent 14px, transparent, transparent 20px, #33383d 21px), repeating-radial-gradient(circle at center -50%, teal, #236666 2px, #33383d 3px);
+  border-bottom-right-radius: 50% 18px;
+  border-bottom-left-radius: 50% 18px;
+  z-index: 1;
+}
+
+.bottom {
+  position: relative;
+  margin-top: -6px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 96px;
+  height: 30px;
+  background-color: #8f7553;
+  border-bottom-right-radius: 50% 18px;
+  border-bottom-left-radius: 50% 18px;
+}
+
+.bottom::after {
+  position: absolute;
+  bottom: 11px;
+  right: 50%;
+  width: 96px;
+  height: 40px;
+  background: radial-gradient(ellipse at top center, #927754, #927754, tan);
+  border-top-right-radius: 25px 23px;
+  border-bottom-right-radius: 50% 17px;
+  border-bottom-left-radius: 50% 17px;
+  border-top-left-radius: 25px 23px;
+  transform: translateX(50%);
+  content: '';
+}
+
+.needle {
+  position: relative;
+  margin-left: 30px;
+  width: 5px;
+  height: 150px;
+  border-top-right-radius: 50% 10px;
+  border-bottom-right-radius: 50% 140px;
+  border-bottom-left-radius: 50% 140px;
+  border-top-left-radius: 50% 10px;
+  background: linear-gradient(to right, #909090, #797979, silver, #575555);
+}
+
+.needle::after {
+  position: absolute;
+  top: 5px;
+  right: 50%;
+  width: 2px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translateX(50%);
+  content: '';
+}
+
+  </style>
+
+</body>
+<div class="content">
+  <div>
+    <div class="spool">
+      <div class="top">
+        <div></div>
+        <div></div>
+      </div>
+      <div class="thread"></div>
+      <div class="bottom"></div>
+    </div>
+    <div class="needle"></div>
+  </div>
+</div>
+
+</html>

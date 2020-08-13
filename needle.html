@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>needle</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .content {
+      height: 100vh;
+      padding: 50px 100px;
+      background: linear-gradient(#fff8ef, #fff)
+    }
+
+    @keyframes swim {
+
+      0% {}
+
+      4% {
+        transform: translateX(100px);
+      }
+
+      8% {
+        transform: translateX(400px);
+      }
+
+      9% {
+        transform: translateX(400px) rotate(-2deg);
+        transform-origin: right;
+      }
+
+      10% {
+        transform: translateX(400px) rotate(3deg);
+        transform-origin: right;
+
+      }
+
+      11% {
+        transform: translateX(400px) rotate(-2deg);
+        transform-origin: right;
+
+      }
+
+      12% {
+        transform: translateX(400px);
+      }
+
+      16% {
+        transform: translateX(350px);
+      }
+
+      24% {
+        transform: translateX(300px);
+      }
+
+      /* diagonal */
+      28% {
+        transform: translateX(550px) translateY(250px);
+      }
+
+      32% {
+        transform: translateX(300px);
+      }
+
+      36% {
+        transform: translateX(400px) translateY(100px);
+      }
+
+      40% {
+        transform: translateX(300px);
+      }
+
+      48% {
+        transform: translateX(300px);
+      }
+
+      56% {
+        transform: translateX(300px) translateY(300px);
+      }
+
+      64% {
+        transform: translateX(300px) translateY(300px);
+      }
+
+      68% {
+        transform: translateX(300px) translateY(300px);
+      }
+
+      69% {
+        transform: translateX(300px) translateY(200px);
+      }
+
+      72% {
+        transform: translateX(300px) translateY(200px);
+        border-color: transparent;
+        box-shadow: 0 0 0 0 transparent;
+        background-color: transparent;
+      }
+
+      73% {
+        transform: translateX(300px) translateY(200px);
+        border-color: #db5f5f;
+        box-shadow: 0 0 5px 5px orangered,
+          0 0 10px 10px orange;
+        background-color: #e7d8ad;
+
+      }
+
+      76% {
+        transform: translateX(300px) translateY(200px);
+        border-color: #db5f5f;
+        box-shadow: 0 0 5px 5px orangered,
+          0 0 10px 10px orange;
+        background-color: transparent;
+
+
+      }
+
+      77% {
+        transform: translateX(300px) translateY(200px);
+        border-color: transparent;
+        box-shadow: 0 0 0 0 transparent;
+
+      }
+
+      84% {
+        transform: translateX(300px) translateY(-500px);
+      }
+
+      92% {
+        transform: translateX(0) translateY(-500px);
+      }
+
+
+      96% {
+        transform: translateX(0) translateY(0);
+      }
+
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      4% {
+        transform: rotate(-90deg);
+      }
+
+      8% {
+        transform: rotate(-90deg);
+      }
+
+
+      12% {
+        transform: rotate(-90deg);
+      }
+
+      16% {
+        transform: rotate(-90deg);
+      }
+
+      18% {
+        transform: rotate(-180deg);
+      }
+
+      24% {
+        transform: rotate(-405deg);
+      }
+
+      32% {
+        transform: rotate(-405deg);
+      }
+
+      40% {
+        transform: rotate(-405deg);
+      }
+
+
+      46% {
+        transform: rotate(-720deg);
+      }
+
+      60% {
+        transform: rotate(-720deg);
+      }
+
+      62% {
+        transform: scaleY(130%) rotate(-720deg);
+        transform-origin: bottom;
+      }
+
+      64% {
+        transform: rotate(-720deg);
+        transform-origin: bottom;
+      }
+
+      66% {
+        transform: scaleY(130%) rotate(-720deg);
+        transform-origin: bottom;
+      }
+
+      68% {
+        transform: rotate(-720deg);
+        transform-origin: bottom;
+      }
+
+      72% {
+        transform: rotate(-720deg);
+        transform-origin: center;
+      }
+
+      76% {
+        transform: rotate(180deg);
+        transform-origin: center;
+      }
+
+      84% {
+        transform: rotate(180deg);
+      }
+
+      92% {
+        transform: rotate(0deg);
+      }
+
+
+    }
+
+    .wrap {
+      width: 150px;
+      border-radius: 50%;
+      animation-duration: 10s;
+      transform-origin: center;
+      border: 1px solid transparent;
+      box-shadow: 0 0 0 0 transparent;
+      animation-name: swim;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .needle {
+      position: relative;
+      width: 6px;
+      height: 150px;
+      margin: 0 auto;
+      border-top-right-radius: 50% 10px;
+      border-bottom-right-radius: 50% 140px;
+      border-bottom-left-radius: 50% 140px;
+      border-top-left-radius: 50% 10px;
+      background: linear-gradient(to right, #909090, #797979, silver, #575555);
+      animation-duration: 10s;
+      animation-name: rotate;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .needle::after {
+      position: absolute;
+      top: 5px;
+      right: 50%;
+      width: 2px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: translateX(50%);
+      content: '';
+    }
+  </style>
+  <div class="content">
+    <div class="wrap">
+      <div class="needle"></div>
+    </div>
+  </div>
+</body>
+
+</html>

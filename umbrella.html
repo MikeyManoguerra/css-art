@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      30% {
+        transform: rotate(20deg);
+      }
+
+      40% {
+        transform: rotate(30deg);
+      }
+
+      60% {
+        transform: rotate(30deg);
+      }
+
+      90% {
+        transform: rotate(0deg);
+      }
+
+    }
+
+    .wrap {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: auto;
+      grid-template-columns: auto;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .upper {
+      display: flex;
+      flex-direction: column;
+      animation-duration: 10s;
+      animation-name: rotate;
+      animation-iteration-count: infinite;
+      transform-origin: bottom center;
+    }
+
+    .pole {
+      width: 15px;
+      background-color: #b1b1b1;
+    }
+
+    .top {
+      height: 5px;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .middle {
+      height: 50px;
+      border-bottom-left-radius: 50% 8px;
+      border-bottom-right-radius: 50% 8px;
+      background: linear-gradient(#686868, #b1b1b1);
+    }
+
+    .bottom {
+      position: relative;
+      height: 200px;
+      border-top-left-radius: 50% 8px;
+      border-top-right-radius: 50% 8px;
+      background: linear-gradient(#b1b1b1, #686868);
+      transform: translateY(-8px);
+    }
+
+    .bottom::after {
+      position: absolute;
+      top: 8px;
+      right: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: grey;
+      transform: translate(50%, -50%);
+      content: '';
+    }
+
+    .umbrella {
+      position: relative;
+      height: 212px;
+      transform: translateY(4px);
+    }
+
+    .panel {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 120px;
+      border-top-right-radius: 50% 100%;
+      border-top-left-radius: 50% 100%;
+      transform-origin: top center;
+    }
+
+    .panel:nth-child(1) {
+      height: 212px;
+      border-bottom-right-radius: 50% 10%;
+      border-bottom-left-radius: 50% 10%;
+      background-color: #ff8d8d;
+      z-index: 2;
+      transform: translate(-50%, -4px);
+
+    }
+
+    .panel:nth-child(2) {
+      width: 140px;
+      height: 215px;
+      border-bottom-right-radius: 50% 10%;
+      border-bottom-left-radius: 50% 10%;
+      background-color: #7272f1;
+      z-index: 1;
+      transform: translateX(-50%) rotate(18deg) skewX(-12deg);
+    }
+
+    .panel:nth-child(3) {
+      width: 140px;
+      height: 215px;
+      border-bottom-right-radius: 50% 10%;
+      border-bottom-left-radius: 50% 10%;
+      background-color: #f6d987;
+      z-index: 1;
+      transform: translateX(-50%) rotate(-18deg) skewX(12deg);
+    }
+
+    .panel:nth-child(4) {
+      height: 220px;
+      border-bottom-right-radius: 50% 10%;
+      border-bottom-left-radius: 50% 15%;
+      background-color: #72f18d;
+      transform: translate(-50%, 10px) rotate(36deg) skewX(-12deg);
+
+    }
+
+    .panel:nth-child(5) {
+      height: 220px;
+      border-bottom-right-radius: 50% 15%;
+      border-bottom-left-radius: 50% 30%;
+      background-color: #b367f1;
+      transform: translate(-50%, 10px) rotate(-36deg) skewX(12deg);
+    }
+  </style>
+</body>
+<div class="wrap">
+  <div class="content">
+    <div class="upper">
+      <div class="pole top"></div>
+      <div class="umbrella">
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+      </div>
+      <div class="pole middle"></div>
+    </div>
+    <div class="pole bottom"></div>
+  </div>
+</div>
+
+</html>

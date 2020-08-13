@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      /* height: 100vh; */
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    *::after,
+    *::before {
+      position: absolute;
+      box-sizing: inherit;
+      content: '';
+    }
+    
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 600px;
+    }
+    
+    .content::before {
+      
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(transparent, transparent, #f3f3e5, #f1f1d7);
+    }
+
+    .content::after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(white, transparent, transparent, transparent);
+      z-index: 2;
+    }
+
+    .background {
+      position: absolute;
+      right: 50%;
+      bottom: -53px;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(to right, transparent 30%, green, transparent 75%);
+      transform: translateX(50%);
+    }
+
+    .sidewalk {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pole {
+      position: absolute;
+      bottom: 20px;
+      left: 130px;
+      width: 60px;
+      height: 600px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), repeating-linear-gradient(88deg, #5d4b41, #a5785e 35%, #7c5b48 44%);
+      border-bottom-right-radius: 50% 25px;
+      border-bottom-left-radius: 50% 15px;
+      transform: skewX(3deg);
+      transform-origin: bottom right;
+      z-index: 2;
+    }
+
+    .pole::before,
+    .pole::after {
+      right: -1px;
+      width: 45px;
+      height: 14px;
+      background-color: #beb207;
+      border-left: 2px solid orange;
+      border-bottom: 2px solid rgb(182, 118, 0);
+      border-radius: 2px;
+      transform: skewX(-3deg) rotate(-5deg);
+    }
+
+    .pole::before {
+      display: flex;
+      align-items: center;
+      bottom: 40%;
+      padding-left: 5px;
+      font-family: sans-serif;
+      font-size: 10px;
+      line-height: 12px;
+      color: rgba(0, 0, 0, 0.3);
+      content: '#BLM';
+    }
+
+    .pole::after {
+      bottom: 35%;
+    }
+
+    .shadow {
+      position: absolute;
+      bottom: 20px;
+      left: 130px;
+      width: 60px;
+      height: 60px;
+      background-color: #535757;
+      border-top-right-radius: 50% 15px;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 50% 25px;
+      border-bottom-left-radius: 50% 15px;
+      transform: skewX(55deg);
+      transform-origin: bottom right;
+      z-index: 1;
+    }
+
+    .block {
+      position: relative;
+      width: 180px;
+      height: 10px;
+      background: linear-gradient(to right, #615f5f, grey);
+      box-shadow: 39px 58px grey, 39px 55px #706e6e, 39px 52px #7a7676, 39px 48px grey;
+      transform: skewX(-45deg);
+    }
+
+    .block::before {
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 80px;
+      background: linear-gradient(12deg, grey, #aac0c0);
+      transform: translateY(calc(-100% + 1px));
+    }
+
+    .block::after {
+      bottom: 0;
+      left: 0;
+      width: 180px;
+      height: 40px;
+      background: linear-gradient(-12deg, #b1acac, grey);
+      transform: skewX(45deg) translateY(calc(100% - 1px));
+      transform-origin: bottom right;
+    }
+
+    .block.left {
+      margin-left: -4px;
+      transform: rotate(-3deg) skewX(-45deg);
+    }
+
+    .block.block.left::before {
+      background: linear-gradient(12deg, #6e6e6e, #aac0c0);
+    }
+
+    .block.right {
+      margin-left: -2px;
+      transform: rotate(2deg) skewX(-45deg) translate(-2px, -2px);
+    }
+
+    .block.block.right::before {
+      background: linear-gradient(12deg, #6e6e6e, #aac0c0);
+    }
+
+    .anchor {
+      position: absolute;
+      right: 7px;
+      bottom: 30px;
+      width: 15px;
+      height: 20px;
+      border: 4px solid #685757;
+      border-radius: 30% 30% 50% 50%;
+      transform: skewX(-5deg);
+      transform-origin: bottom right;
+      z-index: 1;
+    }
+
+    .anchor::before {
+      bottom: -15px;
+      right: -3px;
+      width: 16px;
+      height: 18px;
+      background-color: #535757;
+      border-top-right-radius: 50% 5px;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 50% 5px;
+      border-bottom-left-radius: 50% 5px;
+      transform: skewX(70deg);
+      transform-origin: bottom right;
+    }
+
+    .anchor::after {
+      right: 50%;
+      bottom: 0;
+      width: 5px;
+      height: 15px;
+      background: linear-gradient(#576363, black);
+      transform: translate(50%, 100%);
+    }
+
+    .line {
+      position: absolute;
+      right: 16px;
+      bottom: 44px;
+      width: 700px;
+      height: 3px;
+      background: repeating-linear-gradient(45deg, #afbcc7, #4d5358 3px, #33383d 4px);
+      transform: rotate(52deg);
+      transform-origin: right;
+      z-index: 1;
+    }
+
+    .line::before {
+      right: 10%;
+      bottom: -3px;
+      width: 400px;
+      height: 10px;
+      background: linear-gradient(179deg, orange 50%, #ff4800);
+      border-radius: 2px;
+      box-shadow: 2px 4px teal;
+    }
+
+    .line::after {
+      right: 18px;
+      bottom: -40px;
+      width: 85%;
+      height: 100%;
+      background-color: #535757;
+      transform: rotate(-48deg);
+      transform-origin: right;
+    }
+
+    .grass {
+      position: absolute;
+      width: 25px;
+      height: 70px;
+    }
+
+    .grass.one {
+      bottom: -39px;
+      left: 320px;
+    }
+
+    .grass.two {
+      right: 13px;
+      bottom: 18px;
+    }
+
+    .grass.three {
+      bottom: 22px;
+      left: 150px;
+      z-index: 3;
+    }
+
+    .stalk {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-top-right-radius: 80% 90%;
+      border-bottom-right-radius: 8px;
+      background: linear-gradient(green, #064b06);
+      transform-origin: 95% bottom;
+      clip-path: polygon(100% 100%, 91% 69%, 68% 39%, 41% 22%, 2% 9%, 41% 31%, 65% 51%, 74% 70%, 79% 86%, 77% 100%);
+    }
+
+    .stalk:nth-child(2) {
+      transform: scale(0.5);
+    }
+
+    .stalk:nth-child(3) {
+      transform: scale(1, 0.3);
+    }
+
+    .stalk:nth-child(4) {
+      transform: scale(-1, 0.8);
+    }
+
+    .stalk:nth-child(5) {
+      transform: scale(-1, 0.4);
+    }
+  </style>
+  <div class="content">
+    <div class="background"></div>
+    <div class="sidewalk">
+      <div class="shadow"></div>
+      <div class="pole"></div>
+      <div class="block"></div>
+      <div class="block left"></div>
+      <div class="block right"></div>
+      <div class="block">
+      </div>
+      <div class="anchor"></div>
+      <div class="line"></div>
+      <div class="grass two">
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+      </div>
+      <div class="grass one">
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+      </div>
+      <div class="grass three">
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
