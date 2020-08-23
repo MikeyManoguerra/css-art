@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11:37</title>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(75px, 80px) rotate(-40deg);
+  }
+
+  30% {
+    transform: translate(75px, 80px) rotate(-36deg);
+  }
+
+  60% {
+    transform: translate(75px, 80px) rotate(-44deg);
+  }
+
+  90% {
+    transform: translate(75px, 80px) rotate(-40deg);
+  }
+}
+
+body {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  transform: scale(.7);
+}
+
+.kite {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, tomato 50%, teal 50% 100%);
+  transform: rotate(40deg) translateY(-200px);
+}
+
+.kite::before {
+  /* lower half of kite */
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(grey, black 3px, transparent 3px 100%),
+    linear-gradient(to right, gold 50%, limegreen 50% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  transform-origin: top right;
+  transform: rotate(-45deg) scaleY(1.3) scaleX(1.414);
+  content: '';
+}
+
+.kite::after {
+  /* transom */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #000;
+  transform-origin: top;
+  transform: rotate(-45deg) scaleY(1.99) translateX(-50%);
+  content: '';
+}
+
+.string::after {
+  position: absolute;
+  bottom: calc(100% - 1px);
+  left: 100%;
+  width: 229px;
+  height: 207px;
+  content: '';
+  border: 3px solid black;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform-origin: bottom left;
+  transform: rotate(-14deg);
+}
+
+.string {
+  position: absolute;
+  top: -58%;
+  right: 27%;
+  width: 300px;
+  height: 1000px;
+  border-right: 3px solid black;
+  border-radius: 0 0 100% 0;
+  transform-origin: top;
+  transform: rotate(57deg);
+}
+
+.tail {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 15px;
+  height: 200px;
+  transform-origin: top;
+  background-color: mediumorchid;
+  border-radius: 7px;
+  border-top: 2px solid black;
+  box-shadow:
+    50px 150px 0 0 rgba(0, 0, 0, 0.2),
+    50px 150px 0 0 mediumorchid;
+  transform: translate(75px, 80px) rotate(-40deg);
+  animation-name: shake;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.tail::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 75px;
+  background-color: mediumorchid;
+  border-radius: 7px;
+  transform-origin: bottom;
+  transform: rotate(48deg);
+  content: '';
+}
+
+.tail:first-child {
+  box-shadow:
+    50px 150px 0 0 rgba(0, 0, 0, 0.2),
+    50px 150px 0 0 limegreen;
+  animation-duration: 11s;
+
+}
+
+.tail:first-child,
+.tail:first-child::after {
+  background-color: limegreen;
+}
+</style>
+
+<body>
+  <div class="content">
+    <div class="kite">
+      <div class="tail"></div>
+      <div class="tail"></div>
+    </div>
+    <div class="string"></div>
+  </div>
+</body>
+
+</html>
