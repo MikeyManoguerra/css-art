@@ -6,198 +6,269 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>622</title>
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-    body {
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      background-color: tomato;
-    }
-
-
-    @keyframes al {
-      24% {
-        width: 197px;
-      }
-
-      75% {
-        width: 197px;
-      }
-    }
-
-    @keyframes a {
-      24% {
-        width: 3px;
-        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.5);
-        transform: scale(1);
-      }
-
-      25% {
-        width: 3px;
-        transform: scaleX(-1);
-      }
+body {
+  display: grid;
+  justify-items: center;
+  margin: 150px;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: tomato;
+}
 
 
-      50% {
-        width: 50px;
-        box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.5);
+@keyframes al {
+  25% {
+    width: 50px;
+  }
 
-      }
+  50% {
+    width: 100px;
+  }
 
-      74% {
-        width: 3px;
-        transform: scaleX(-1);
-      }
+  62% {
+    width: 197px;
+  }
 
-      75% {
-        width: 3px;
-        transform: scaleX(1);
-      }
-    }
+  88% {
+    width: 197px;
+  }
 
-    @keyframes ar {
-      25% {
-        width: 100px;
-      }
+}
 
-      50% {
-        width: 0;
-      }
-    }
+@keyframes a {
+  25% {
+    width: 75px;
+    height: 50px;
+  }
 
-    @keyframes b {
-      25% {
-        width: 170px;
-      }
-    }
+  50% {
+    width: 100px;
+    height: 20px;
+  }
+  62% {
+    width: 3px;
+    box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
 
-    @keyframes br {}
-
-    @keyframes b {
-      50% {
-        width: 30px;
-        height: 60px;
-      }
-    }
+  63% {
+    width: 3px;
+    transform: scaleX(-1);
+  }
 
 
-    .content {
-      position: relative;
+  75% {
+    width: 50px;
+    box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.5);
 
-    }
+  }
 
-    .cord {
-      border: 0px solid transparent;
-      animation-duration: 6s;
-      /* animation-iteration-count: infinite; */
-      animation-timing-function: linear;
-    }
+  87% {
+    width: 3px;
+    transform: scaleX(-1);
+  }
 
-    .wrapper {
-      display: flex;
+  88% {
+    width: 3px;
+    transform: scaleX(1);
+  }
+}
 
-    }
+@keyframes ar {
+  63% {
+    width: 100px;
+  }
 
-    .wrapper::before,
-    .wrapper::after {
-      display: block;
-      width: 100px;
-      animation-duration: 6s;
-      /* animation-iteration-count: infinite; */
-      animation-timing-function: linear;
-      content: '';
-    }
+  75% {
+    width: 0;
+  }
+}
 
-    .a::before {
-      animation-name: al;
-    }
+@keyframes b {
+  25% {
+    width: 25px;
+    height: 40px;
+  }
 
-    .a::after {
-      /* animation-name: ar; */
-    }
+  50% {
+    width: 100px;
+    height: 20px;
+  }
+}
 
-    .b::before {
-      animation-name: bl;
-    }
+@keyframes cl {
+  25% {
+    width: 70px;
+  }
 
-    .b::after {
-      animation-name: br;
-    }
+  50% {
+    width: 0;
+    /* height: 20px; */
+  }
 
-    .c::before {
-      animation-name: cl;
-    }
+}
 
-    .c::after {
-      animation-name: cr;
-    }
+@keyframes c {
+  25% {
+    width: 30px;
+    height: 40px;
+  }
 
-    .d::before {
-      animation-name: dl;
-    }
+  50% {
+    width: 100px;
+    height: 20px;
+  }
+}
 
-    .d::after {
-      animation-name: dr;
-    }
+@keyframes dl {
+  25% {
+    width: 70px;
+  }
 
-    .c::before,
-    .d::before {
-      width: 0;
-    }
+  50% {
+    width: 0;
 
-    .c::after,
-    .d::after {
-      width: 200px;
-    }
+  }
+}
 
-    .a>.cord {
-      width: 100px;
-      height: 20px;
-      border-top: 3px solid ivory;
-      border-right: 3px solid ivory;
-      border-top-right-radius: 100% 100%;
-      box-shadow: inset 0px 2px 0 0 rgba(0, 0, 0, 0.5);
-      animation-name: a;
-    }
+@keyframes d {
+  25% {
+    width: 70px;
+    height: 60px;
+  }
+
+  50% {
+    width: 100px;
+    height: 20px;
+  }
+}
+
+@keyframes content {
+  25% {
+    transform-origin: top;
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.cord {
+  border: 0px solid transparent;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper::before,
+.wrapper::after {
+  display: block;
+  width: 100px;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  content: '';
+}
+
+.a::before {
+  animation-name: al;
+}
+
+.a::after {
+  animation-name: ar;
+}
+
+.b::before {
+  animation-name: bl;
+}
+
+.b::after {
+  animation-name: br;
+}
+
+.c::before {
+  animation-name: cl;
+}
+
+.c::after {
+  animation-name: cr;
+}
+
+.d::before {
+  animation-name: dl;
+}
+
+.d::after {
+  animation-name: dr;
+}
+
+.c::before,
+.d::before {
+  width: 0;
+}
+
+.c::after,
+.d::after {
+  width: 200px;
+}
+
+.a>.cord {
+  width: 100px;
+  height: 20px;
+  border-top: 3px solid ivory;
+  border-right: 3px solid ivory;
+  border-top-right-radius: 100% 100%;
+  box-shadow: inset 0px 2px 0 0 rgba(0, 0, 0, 0.5);
+  animation-name: a;
+}
 
 
-    .b>.cord {
-      width: 100px;
-      height: 20px;
-      border-bottom: 3px solid ivory;
-      border-right: 3px solid ivory;
-      border-bottom-right-radius: 100% 100%;
-      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
-      animation-name: b;
-    }
+.b>.cord {
+  width: 100px;
+  height: 20px;
+  border-bottom: 3px solid ivory;
+  border-right: 3px solid ivory;
+  border-bottom-right-radius: 100% 100%;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
+  animation-name: b;
+}
 
-    .c>.cord {
-      width: 100px;
-      height: 20px;
-      border-top: 3px solid ivory;
-      border-left: 3px solid ivory;
-      margin-top: -3px;
-      border-top-left-radius: 100% 100%;
-      box-shadow: inset 0px 2px 0 0 rgba(0, 0, 0, 0.5);
-    }
+.c>.cord {
+  width: 100px;
+  height: 20px;
+  border-top: 3px solid ivory;
+  border-left: 3px solid ivory;
+  margin-top: -3px;
+  border-top-left-radius: 100% 100%;
+  box-shadow: inset 0px 2px 0 0 rgba(0, 0, 0, 0.5);
+  animation-name: c;
+}
 
-    .d>.cord {
-      width: 100px;
-      height: 20px;
-      border-bottom: 3px solid ivory;
-      border-left: 3px solid ivory;
-      border-bottom-left-radius: 100% 100%;
-      box-shadow: 0px 2px 0 0 rgba(0, 0, 0, 0.5);
-    }
+.d>.cord {
+  width: 100px;
+  height: 20px;
+  border-bottom: 3px solid ivory;
+  border-left: 3px solid ivory;
+  border-bottom-left-radius: 100% 100%;
+  box-shadow: 0px 2px 0 0 rgba(0, 0, 0, 0.5);
+  animation-name: d;
+}
   </style>
 </head>
 
