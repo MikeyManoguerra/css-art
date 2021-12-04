@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodiversity Party</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700&display=swap');
+
+    :root {
+      --serif: 'Grenze Gotisch';
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    h1,
+    h2 {
+      font-family: var(--serif);
+    }
+
+    html {
+      background: repeating-radial-gradient(circle at 5% 95%, transparent 2px, gainsboro 2px 3px, transparent 3px 20px) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .content {
+      display: grid;
+      justify-items: center;
+      gap: 25px;
+      margin-right: 25px;
+      margin-left: 25px;
+      padding: 0;
+      position: relative;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    @media only screen and (min-width: 640px) {
+      .content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media only screen and (min-width: 1080px) {
+      .content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media only screen and (min-width: 1260px) {
+      .content {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    .content>div:last-child {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .frame {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      box-shadow: 2px 2px 6px 0 black;
+      border-radius: 3px;
+    }
+
+    .frame::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow:
+        inset 0 0 4px 1px saddlebrown,
+        inset 0 0 0 5px peru,
+        inset 0 0 0 6px gold,
+        inset 0 0 10px 2px black;
+      content: "";
+    }
+
+    .frame.portrait {
+      padding-top: 75%;
+      box-shadow:
+        2px 2px 6px 0 black,
+        inset 0 0 4px 1px saddlebrown,
+        inset 0 0 0 5px peru,
+        inset 0 0 0 6px gold;
+    }
+
+    .frame.portrait::after {
+      display: none;
+    }
+
+    .frame.portrait>div {
+      position: absolute;
+      overflow-y: auto;
+      overflow-x: hidden;
+      top: 6px;
+      right: 6px;
+      bottom: 6px;
+      left: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+    }
+
+    .header {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 18% 4px, lightgrey, grey 2px, transparent 2px 100%),
+
+        radial-gradient(circle at 82% 4px, lightgrey, grey 2px, transparent 2px 100%),
+
+        radial-gradient(circle at 4px 50%, lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(circle at 0.5px 49.5%, ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at calc(100% - 4px) 50%, lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(circle at calc(100% - 0.5px) 49.5%, ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at 18% calc(100% - 4px), lightgrey, grey 2px, transparent 2px 100%),
+
+        radial-gradient(circle at 82% calc(100% - 4px), lightgrey, grey 2px, transparent 2px 100%);
+
+
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .frame>img {
+      object-fit: cover;
+    }
+
+    .shadow {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    .shadow::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      box-shadow: inset 0 0 10px 2px black;
+    }
+  </style>
+</head>
+<header>
+  <div class="content">
+    <div>
+      <h1>
+        Biodiversity Party
+      </h1>
+      <p>
+        A webpage that explores systematics via art.
+      </p>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="content">
+    <div>
+      <div class="frame">
+        <img src="https://res.cloudinary.com/dgzjr8afn/image/upload/v1599854703/arrangement.jpg" alt="">
+      </div>
+      <div class="header">
+        <h2>Leaf Arrangement</h2>
+        <p>Do leaves have an alternate or opposite layout on a stem?</p>
+      </div>
+    </div>
+    <div>
+      <div class="frame">
+        <img src="https://res.cloudinary.com/dgzjr8afn/image/upload/v1599854703/leaf-type.jpg" alt="">
+      </div>
+      <div class="header">
+        <h2>Leaf Type</h2>
+        <p>Are the leaves simple, or composed of multiple leaflets?</p>
+      </div>
+    </div>
+    <div>
+      <div class="frame">
+        <img src="https://res.cloudinary.com/dgzjr8afn/image/upload/v1599854703/compound-type.jpg" alt="">
+      </div>
+      <div class="header">
+        <h2>Compound Layout</h2>
+        <p>Are the compound leaflets arranged in pinnate (inline) or palmate (fan shaped) layout?</p>
+      </div>
+    </div>
+    <div>
+      <div class="frame">
+        <img src="https://res.cloudinary.com/dgzjr8afn/image/upload/v1599854703/leaf-margin.jpg" alt="">
+      </div>
+      <div class="header">
+        <h2>Leaf Margin</h2>
+        <p>Is the leaf margin lobed, toothed, or entire (smooth)?</p>
+      </div>
+    </div>
+    <div>
+      <div class="frame">
+        <img src="https://res.cloudinary.com/dgzjr8afn/image/upload/v1599854702/venation.jpg" alt="">
+      </div>
+      <div class="header">
+        <h2>Venation</h2>
+        <p>Is the layout of the veins pinnate or palmate?</p>
+      </div>
+    </div>
+    <div>
+      <div class="frame portrait">
+        <div>
+          <div class="shadow">
+            <img src="https://res.cloudinary.com/dgzjr8afn/image/upload/v1599855008/label-cards.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <h2>Labels</h2>
+        <p>Headings for real life!</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

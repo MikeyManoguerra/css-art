@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body class="preload">
+  <style>
+    @keyframes showTop {
+      0% {
+        height: 0;
+      }
+
+      100% {
+        height: 100%;
+      }
+    }
+
+    @keyframes hideTop {
+      0% {
+        height: 100%;
+      }
+
+      100% {
+        height: 0;
+      }
+    }
+
+    .top-wrapper {
+      height: 0;
+      overflow: hidden;
+    }
+
+    .top-wrapper[aria-expanded="true"] {
+      animation-duration: .5s;
+      animation-name: showTop;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    .top-wrapper[aria-expanded="false"] {
+      animation-duration: .5s;
+      animation-name: hideTop;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    .top {
+      width: 200px;
+      height: 600px;
+      background-color: tomato;
+
+    }
+
+    @keyframes hideBottom {
+      0% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes showBottom {
+      0% {
+        opacity: 0;
+      }
+
+      75% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .bottom-wrapper {
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .bottom-wrapper[aria-expanded="true"] {
+      animation-duration: .5s;
+      animation-name: showBottom;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    .bottom-wrapper[aria-expanded="false"] {
+      animation-duration: .5s;
+      animation-name: hideBottom;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    .bottom {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+    }
+
+    .content {
+      margin: 100px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content>div {
+      position: relative;
+    }
+
+    body.preload * {
+      animation-duration: 0s !important;
+      -webkit-animation-duration: 0s !important;
+      transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+    }
+  </style>
+
+
+  <div class="content">
+    <div>
+      <button>click</button>
+    </div>
+    <div>
+      <div aria-expanded="true" class="bottom-wrapper">
+        <div class="bottom"></div>
+      </div>
+      <div aria-expanded="false" class="top-wrapper">
+        <div class="top"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const button = document.querySelector('button')
+    button.addEventListener('click', () => {
+      const top = document.querySelector(".top-wrapper").getAttribute("aria-expanded");
+      const bottom = document.querySelector(".bottom-wrapper").getAttribute("aria-expanded");
+
+      document.querySelector(".top-wrapper").setAttribute('aria-expanded', swapValue(top))
+      document.querySelector(".bottom-wrapper").setAttribute('aria-expanded', swapValue(bottom))
+    })
+
+    function swapValue(x) {
+      if (x === "true") {
+        return "false"
+      }
+      return "true"
+    }
+
+    setTimeout(function () {
+      document.body.className = "";
+    }, 1000);
+
+  </script>
+</body>
+
+</html>

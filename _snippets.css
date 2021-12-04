@@ -1,0 +1,13 @@
+* {
+  color: #3c3f40;
+  margin-bottom: 12px;
+  border-bottom: 4px solid #b8ff01;
+  display: inherit;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b8ff01), to(#b8ff01));
+  background: linear-gradient(#b8ff01, #b8ff01);
+  background-size: auto 45%;
+  background-repeat: no-repeat;
+  background-position-y: 105%;
+  -webkit-animation: link-slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: link-slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
