@@ -4,165 +4,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
   <title>Document</title>
 </head>
 
 <body>
   <style>
-body {
-  background-color: #fff7ec;
-}
+    body {
+      background-color: #f6e9d6;
+    }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+    .wrapper {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
 
-.content * {
-  flex-shrink: 0;
-}
+    ul {
+      list-style-type: none;
+      margin: 0;
+      margin-top: 20px;
+      padding: 0;
+    }
 
-.sign {
-  position: relative;
-  width: 80px;
-  height: 200px;
-  border-radius: 8px;
-  background: repeating-linear-gradient(-45deg, #f1c408, #f1c408 24px, #050404 24px, #050404 48px);
-}
+    p {
+      max-width: 800px;
+      margin-bottom: 0px;
+    }
 
-.sign::before {
-  position: absolute;
-  top: 25px;
-  right: 50%;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #33383d, #647786);
-  transform: translateX(50%);
-  content: '';
-}
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      /* align-items: center; */
+      /*   justify-content: center;
+  height: 100vh; */
+    }
 
-.sign::after {
-  position: absolute;
-  bottom: 25px;
-  right: 50%;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #33383d, #647786);
-  transform: translateX(50%);
-  content: '';
-}
+    .content * {
+      flex-shrink: 0;
+    }
 
-.pole {
-  position: relative;
-  width: 20px;
-  background: repeating-linear-gradient(#afbcc7, #4d5358 8px, #33383d 12px);
-}
-
-.pole::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(#829caf, #4a5158);
-  content: '';
-}
-
-.top.pole::after {
-  background: linear-gradient(#829caf, #829caf);
-}
-
-.pole::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(#647786 50%, #4d5358);
-  content: '';
-}
-
-.top.pole::before {
-  background: linear-gradient(#647786, #647786);
-}
-
-.top {
-  height: 8px;
-}
-
-.bottom {
-  height: 250px;
-}
-
-.grass {
-  position: relative;
-  width: 140px;
-  height: 80px;
-  transform: translateY(-95%);
-}
-
-.stalk {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  border-top-right-radius: 80% 90%;
-  border-bottom-right-radius: 8px;
-  background: linear-gradient(green, rgb(7, 92, 7));
-  transform-origin: bottom right;
-}
-
-.stalk::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 85%;
-  height: 100%;
-  background-color: #fff7ec;
-  border-top-right-radius: 80% 90%;
-  border-bottom-right-radius: 8px;
-  content: '';
-}
-
-.stalk:nth-child(2) {
-  transform: scale(0.5) translateX(-15px);
-  z-index: 2;
-}
-
-.stalk:nth-child(3) {
-  transform: scale(1, 0.3);
-  z-index: 3;
-}
-
-.stalk:nth-child(4) {
-  transform: scale(-1, 0.8);
-  z-index: 2;
-}
-
-.stalk:nth-child(5) {
-  transform: scale(-1, 0.4);
-  z-index: 2;
-}
+    footer {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 8px;
+      padding-right: 30px;
+      padding-bottom: 8px;
+      padding-left: 30px;
+    }
   </style>
+  <!-- <header class="art-page-header">
+    <a href="index.html" class="app-text-link">
+      <span>index.html</span>
+    </a>
+  </header> -->
   <!-- <h1>marker sign</h1> -->
   <div class="wrapper">
-    <div class="pole top"></div>
-    <div class="sign"></div>
-    <div class="pole bottom"></div>
-    <div class="grass">
-      <div class="stalk"></div>
-      <div class="stalk"></div>
-      <div class="stalk"></div>
-      <div class="stalk"></div>
-      <div class="stalk"></div>
+    <div class="content">
+      <h1>CSS ART</h1>
+      <p>
+        A collection of pure CSS art pieces from the summer of 2020. Each done in its own single session, with a loose
+        time limit of 1-4 hours
+      </p>
+      <p>
+        Placed in a rough order of high to low execution success,
+        starting at the top.
+      </p>
+      <ul>
+        <li>
+          <a href="box-fan.html" class="app-text-link">
+            <span>box-fan.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="measuring-tape.html" class="app-text-link">
+            <span>measuring-tape.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="sidewalk.html" class="app-text-link">
+            <span>sidewalk.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="highway-sign.html" class="app-text-link">
+            <span>highway-sign.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="needle.html" class="app-text-link">
+            <span>needle.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="gradient.html" class="app-text-link">
+            <span>gradient.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="caulk.html" class="app-text-link">
+            <span>caulk.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="windmills.html" class="app-text-link">
+            <span>windmills.html</span>
+          </a>
+        </li>
+        <a href="cardboard-box.html" class="app-text-link">
+          <span>cardboard-box.html</span>
+        </a>
+        </li>
+        <li>
+          <a href="perspective-doodle.html" class="app-text-link">
+            <span>perspective-doodle.html</span>
+          </a>
+        </li>
+        <li>
+        <li>
+          <a href="cord-study.html" class="app-text-link">
+            <span>cord-study.html</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="kite.html" class="app-text-link">
+            <span>kite.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="spool.html" class="app-text-link">
+            <span>spool.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="umbrella.html" class="app-text-link">
+            <span>umbrella.html</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="leaf.html" class="app-text-link">
+            <span>leaf.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="text-shadow.html" class="app-text-link">
+            <span>text-shadow.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="repeating-study.html" class="app-text-link">
+            <span>repeating-study.html</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
+  <footer>
+    MM
+  </footer>
 </body>
 
 </html>

@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <title>CSS Art | Sidewalk</title>
 </head>
 
 <body>
   <style>
-
     body {
       margin: 0;
       padding: 0;
       /* height: 100vh; */
     }
-    
+
     * {
       box-sizing: border-box;
     }
-    
+
     *::after,
     *::before {
       position: absolute;
       box-sizing: inherit;
       content: '';
     }
-    
+
     .content {
       position: relative;
       display: flex;
@@ -35,9 +35,9 @@
       justify-content: flex-end;
       height: 600px;
     }
-    
+
     .content::before {
-      
+
       position: fixed;
       top: 0;
       right: 0;
@@ -294,6 +294,11 @@
       transform: scale(-1, 0.4);
     }
   </style>
+  <header class="art-page-header">
+    <a href="index.html" class="app-text-link">
+      <span>index.html</span>
+    </a>
+  </header>
   <div class="content">
     <div class="background"></div>
     <div class="sidewalk">

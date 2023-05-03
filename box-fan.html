@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>CSS Art | Box Fan</title>
+</head>
+
+<body>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, powderblue, skyblue);
+    }
+
+    .wrapper {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      margin: 0;
+      padding: 0;
+      min-height: 400px;
+      height: 100vh;
+      background: linear-gradient(to top, powderblue, skyblue);
+    }
+
+    .content {
+      position: relative;
+    }
+
+    .controls {
+      position: relative;
+      width: 300px;
+      z-index: 1;
+    }
+
+    /* handle */
+    .controls::before {
+      position: absolute;
+      right: 50%;
+      bottom: 0;
+      width: 80px;
+      height: 20px;
+      border: 0.5px solid transparent;
+      border-right-color: black;
+      border-top-color: black;
+      border-top-right-radius: 18px 100%;
+      border-top-left-radius: 18px 100%;
+      background: linear-gradient(ivory, cornsilk 97%, black 97% 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 90% 100%, 85% 45%, 15% 45%, 10% 100%, 0% 100%);
+      transform: translateX(50%);
+      content: '';
+
+
+    }
+
+    /* knob */
+    .controls::after {
+      position: absolute;
+      right: 20%;
+      bottom: 0;
+      width: 20px;
+      height: 12px;
+      border: 0.5px solid transparent;
+      border-top-color: black;
+      border-right-color: black;
+      border-top-right-radius: 8px 100%;
+      border-top-left-radius: 8px 100%;
+      background:
+        linear-gradient(ivory 2px, transparent 3px 97%, black 97% 100%),
+        linear-gradient(80deg, transparent 15px, lightgrey 15px 16px, transparent 16px),
+        linear-gradient(90deg, transparent 9px, lightgrey 9px 10px, transparent 10px),
+        linear-gradient(100deg, transparent 4px, lightgrey 4px 5px, transparent 5px),
+        linear-gradient(to right, ivory, cornsilk 75%, beige);
+      content: '';
+    }
+
+    .fan {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 300px;
+      box-shadow:
+        0 0 0 2px lightgrey,
+        4px 4px 10px 1px black,
+        inset 4px 4px 10px 3px black;
+      border-radius: 45px;
+      background:
+        linear-gradient(to right, transparent 38%, grey 38% 42%, transparent 42% 58%, grey 58% 62%, transparent 62%),
+        repeating-linear-gradient(to right, transparent, transparent calc(5% - 5px), beige calc(5% - 5px) calc(5% - 4px), transparent calc(5% - 4px) 5%);
+    }
+
+    /* fan frame */
+    .fan::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 9px solid ivory;
+      border-radius: 45px;
+      content: ''
+    }
+
+    /* fan grate and screws */
+    .fan::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 45px;
+      background:
+        radial-gradient(circle at 18% 4px, lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(ellipse at 17.5% -1px, ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at 82% 4px, lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(ellipse at 82.5% -1px, ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at 4px 50%, lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(circle at 0.5px 49.5%, ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at calc(100% - 4px) 50%, lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(circle at calc(100% - 0.5px) 49.5%, ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at 18% calc(100% - 4px), lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(ellipse at 17.5% calc(100% + 1px), ivory 6px, darkgrey 8px, transparent 8px 100%),
+        radial-gradient(circle at 82% calc(100% - 4px), lightgrey, grey 2px, transparent 2px 100%),
+        radial-gradient(ellipse at 82.5% calc(100% + 1px), ivory 6px, darkgrey 8px, transparent 8px 100%),
+
+        repeating-linear-gradient(to right, transparent, transparent calc(5% - 1.5px), ivory calc(5% - 1.5px) 5%),
+        repeating-linear-gradient(transparent, transparent calc(2% - 1px), ivory calc(2% - 1px) 2%);
+      content: '';
+    }
+
+    @keyframes twitch {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      15% {
+        transform: rotate(4deg);
+      }
+
+      25% {
+        transform: rotate(4deg);
+      }
+
+      40% {
+        transform: rotate(6deg);
+      }
+
+      50% {
+        transform: rotate(6deg);
+      }
+
+      80% {
+        transform: rotate(-5deg);
+      }
+
+      85% {
+        transform: rotate(-5deg);
+      }
+
+      95% {
+        transform: rotate(-3deg);
+      }
+
+      99% {
+        transform: rotate(-1deg);
+      }
+    }
+
+    .axle {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      animation-name: twitch;
+      animation-duration: 18s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .axle::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: ivory;
+      box-shadow:
+        inset 0 0 1px 3px oldlace,
+        inset 0 0 1px 4px silver,
+        inset -10px -10px 5px 0 beige,
+        inset -10px -10px 20px 1px cornsilk,
+        2px 1px 2px 0px rgba(0, 0, 0, 0.5);
+      content: '';
+    }
+
+    .blade {
+      position: absolute;
+      bottom: 50%;
+      right: calc(50% - 25px);
+      width: 50px;
+      height: 115px;
+      border-top-left-radius: 40% 60%;
+      border-top-right-radius: 60% 70%;
+      border-bottom-left-radius: 50% 40%;
+      border-bottom-right-radius: 50% 30%;
+      background: linear-gradient(80deg, ivory, oldlace, cornsilk 70%, burlywood);
+      transform-origin: bottom;
+    }
+
+    .blade:nth-child(1) {
+      box-shadow: 2px 1px 2px 0px rgba(0, 0, 0, 0.5);
+      transform: translateY(-20px);
+    }
+
+    .blade:nth-child(2) {
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+      transform: rotate(72deg) translateY(-20px);
+    }
+
+    .blade:nth-child(3) {
+      box-shadow: -1px -4px 2px 0px rgba(0, 0, 0, 0.5);
+      transform: rotate(144deg) translateY(-20px);
+    }
+
+    .blade:nth-child(4) {
+      box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+      transform: rotate(216deg) translateY(-20px);
+    }
+
+    .blade:nth-child(5) {
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+      transform: rotate(288deg) translateY(-20px);
+    }
+
+    .feet {
+      position: relative;
+      width: 300px
+    }
+
+    .feet::before,
+    .feet::after {
+      position: absolute;
+      top: 0;
+      width: 15px;
+      height: 4px;
+      border-bottom-right-radius: 2px 100%;
+      border-bottom-left-radius: 2px 100%;
+      background-color: ivory;
+      content: '';
+    }
+
+    .feet::before {
+      right: 80%;
+    }
+
+    .feet::after {
+      left: 80%;
+    }
+
+    .cord {
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+      width: 200px;
+      height: 50px;
+      border: 3px solid ivory;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-radius: 50% 50% 50% 0%;
+      box-shadow: inset -2px 3px 2px 0px rgba(0, 0, 0, 0.5);
+      transform: translate(-20px, 34%);
+    }
+
+    /* cord loop */
+    .cord::before {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      width: 50%;
+      height: 50%;
+      border: 3px solid ivory;
+      border-radius: 50%;
+      box-shadow:
+        inset 2px 2px 0px rgba(0, 0, 0, 0.5),
+        2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+      transform: translate(65%, -3px);
+      content: '';
+    }
+
+    .plug {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 10px;
+      height: 13px;
+      border-radius: 25% 25% 0 0;
+      background: linear-gradient(blue, navy);
+      box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+      transform-origin: top;
+      transform: rotate(55deg) translateX(-1px);
+    }
+
+    .plug::after {
+      position: absolute;
+      top: 100%;
+      right: 50%;
+      width: 13px;
+      height: 2px;
+      background-color: navy;
+      transform: translateX(50%);
+      content: '';
+    }
+
+    /* tines */
+    .plug::before {
+      position: absolute;
+      top: 100%;
+      right: 50%;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(to right, transparent 1px, grey 1px 3px, transparent 3px 7px, grey 7px 9px, transparent 9px);
+      transform: translateX(50%);
+      content: '';
+    }
+  </style>
+  <header class="art-page-header">
+    <a href="index.html" class="app-text-link">
+      <span>index.html</span>
+    </a>
+  </header>
+  <div class="wrapper">
+
+    <div class="content">
+      <div class="cord">
+        <div class="plug"></div>
+      </div>
+      <div class="controls"></div>
+      <div class="fan">
+        <div class="axle">
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+        </div>
+      </div>
+      <div class="feet"></div>
+    </div>
+  </div>
+</body>
+
+</html>

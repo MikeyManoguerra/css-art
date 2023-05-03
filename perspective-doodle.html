@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>CSS Art | Perspective Doodle</title>
+</head>
+
+<body>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .portal {
+      position: relative;
+      width: 150px;
+      height: 200px;
+      background: linear-gradient(45deg, moccasin, ivory);
+      border-top: 8px solid rgb(165, 131, 165);
+      border-left: 15px solid rgb(181, 157, 181);
+      border-bottom: 10px solid rgb(211, 188, 211);
+    }
+
+    .portal::after {
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      width: 250px;
+      height: 50px;
+      transform: translateY(50%);
+      box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+      background:
+        radial-gradient(circle at -25px, seagreen, seagreen 45px, transparent 45px),
+        linear-gradient(to bottom, palegreen, seagreen);
+      border-top-left-radius: 12px 25px;
+      border-bottom-left-radius: 12px 25px;
+      content: '';
+    }
+
+    .portal:last-of-type {
+      background: linear-gradient(45deg, linen, ivory);
+      transform: scaleX(-1);
+    }
+
+    .portal:last-of-type:after {
+      background: linear-gradient(to bottom, palegreen, seagreen);
+      box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .split {
+      position: relative;
+      height: 200px;
+      width: 100px;
+      background-color: #fff;
+      z-index: 1;
+    }
+  </style>
+  <header class="art-page-header">
+    <a href="index.html" class="app-text-link">
+      <span>index.html</span>
+    </a>
+  </header>
+
+  <div class="portal"></div>
+  <div class="split"></div>
+  <div class="portal"></div>
+</body>
+
+</html>

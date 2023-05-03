@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>CSS Art | Highway Sign</title>
+</head>
+
+<body>
+  <style>
+    body {
+      background-color: #fff7ec;
+    }
+
+    .wrapper {
+      padding-top: 100px
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*   justify-content: center;
+  height: 100vh; */
+    }
+
+    .content * {
+      flex-shrink: 0;
+    }
+
+    .sign {
+      position: relative;
+      width: 80px;
+      height: 200px;
+      border-radius: 8px;
+      background: repeating-linear-gradient(-45deg, #f1c408, #f1c408 24px, #050404 24px, #050404 48px);
+    }
+
+    .sign::before {
+      position: absolute;
+      top: 25px;
+      right: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #33383d, #647786);
+      transform: translateX(50%);
+      content: '';
+    }
+
+    .sign::after {
+      position: absolute;
+      bottom: 25px;
+      right: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #33383d, #647786);
+      transform: translateX(50%);
+      content: '';
+    }
+
+    .pole {
+      position: relative;
+      width: 20px;
+      background: repeating-linear-gradient(#afbcc7, #4d5358 8px, #33383d 12px);
+    }
+
+    .pole::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(#829caf, #4a5158);
+      content: '';
+    }
+
+    .top.pole::after {
+      background: linear-gradient(#829caf, #829caf);
+    }
+
+    .pole::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(#647786 50%, #4d5358);
+      content: '';
+    }
+
+    .top.pole::before {
+      background: linear-gradient(#647786, #647786);
+    }
+
+    .top {
+      height: 8px;
+    }
+
+    .bottom {
+      height: 250px;
+    }
+
+    .grass {
+      position: relative;
+      width: 140px;
+      height: 80px;
+      transform: translateY(-95%);
+    }
+
+    .stalk {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      border-top-right-radius: 80% 90%;
+      border-bottom-right-radius: 8px;
+      background: linear-gradient(green, rgb(7, 92, 7));
+      transform-origin: bottom right;
+    }
+
+    .stalk::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 85%;
+      height: 100%;
+      background-color: #fff7ec;
+      border-top-right-radius: 80% 90%;
+      border-bottom-right-radius: 8px;
+      content: '';
+    }
+
+    .stalk:nth-child(2) {
+      transform: scale(0.5) translateX(-15px);
+      z-index: 2;
+    }
+
+    .stalk:nth-child(3) {
+      transform: scale(1, 0.3);
+      z-index: 3;
+    }
+
+    .stalk:nth-child(4) {
+      transform: scale(-1, 0.8);
+      z-index: 2;
+    }
+
+    .stalk:nth-child(5) {
+      transform: scale(-1, 0.4);
+      z-index: 2;
+    }
+  </style>
+  <header class="art-page-header">
+    <a href="index.html" class="app-text-link">
+      <span>index.html</span>
+    </a>
+  </header>
+  <div class="wrapper">
+    <div class="content">
+      <div class="pole top"></div>
+      <div class="sign"></div>
+      <div class="pole bottom"></div>
+      <div class="grass">
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+        <div class="stalk"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

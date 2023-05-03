@@ -4,124 +4,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <title>CSS ART | Windmills</title>
 </head>
 
 <body>
   <style>
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
 
-body {
-  background: linear-gradient(#b8b8ce, #8484f3, #b65cda);
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-}
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-end;
-  height: 100vh;
-}
+    body {
+      background: linear-gradient(#b8b8ce, #8484f3, #b65cda);
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
 
-.windmills {
-  display: flex;
-  justify-content: space-around;
-}
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+      height: 100vh;
+    }
 
-.windmill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-origin: center bottom;
-}
+    .windmills {
+      display: flex;
+      justify-content: space-around;
+    }
 
-.top {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  background: linear-gradient(to bottom, #4b4b4b, #222222);
-  border-radius: 50%;
-  margin-bottom: 2px;
-  animation-duration: 10s;
-  animation-name: rotate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
+    .windmill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: center bottom;
+    }
 
-.windmill:nth-child(2) {
-  transform: scale(.8);
-}
+    .top {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(to bottom, #4b4b4b, #222222);
+      border-radius: 50%;
+      margin-bottom: 2px;
+      animation-duration: 10s;
+      animation-name: rotate;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
 
-.windmill:nth-child(3) {
-  transform: scale(.7);
-}
+    .windmill:nth-child(2) {
+      transform: scale(.8);
+    }
 
-.windmill:nth-child(2)>.top {
-  animation-duration: 6s;
-}
+    .windmill:nth-child(3) {
+      transform: scale(.7);
+    }
 
-.windmill:nth-child(3)>.top {
-  animation-duration: 12s;
-}
+    .windmill:nth-child(2)>.top {
+      animation-duration: 6s;
+    }
 
-.blade {
-  position: absolute;
-  bottom: 50%;
-  right: 50%;
-  transform: translate(32%, -10px);
-  transform-origin: 50% bottom;
-}
+    .windmill:nth-child(3)>.top {
+      animation-duration: 12s;
+    }
 
-.blade:nth-child(1) {
-  transform: translateX(72%) rotate(120deg) translateY(-6px);
-}
+    .blade {
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+      transform: translate(32%, -10px);
+      transform-origin: 50% bottom;
+    }
 
-.blade:nth-child(2) {
-  transform: translateX(62%) rotate(240deg) translateY(-12px);
-}
+    .blade:nth-child(1) {
+      transform: translateX(72%) rotate(120deg) translateY(-6px);
+    }
 
-.length {
-  width: 20px;
-  height: 180px;
-  background: linear-gradient(to right, #4b4b4b, #9c9c9c);
-  border-top-left-radius: 16px 100%;
-  border-top-right-radius: 4px;
-  /* weird line */
-  transform: translateY(1px)
-}
+    .blade:nth-child(2) {
+      transform: translateX(62%) rotate(240deg) translateY(-12px);
+    }
 
-.connector {
-  position: relative;
-  width: 20px;
-  height: 40px;
-  background: linear-gradient(to right, #4b4b4b, #9c9c9c);
-  clip-path: polygon(74% 100%, 74% 85%, 82% 65%, 100% 49%, 100% 0%, 2% 0%, 28% 15%, 37% 26%, 39% 40%, 42% 100%)
-}
+    .length {
+      width: 20px;
+      height: 180px;
+      background: linear-gradient(to right, #4b4b4b, #9c9c9c);
+      border-top-left-radius: 16px 100%;
+      border-top-right-radius: 4px;
+      /* weird line */
+      transform: translateY(1px)
+    }
 
-.bottom {
-  width: 8px;
-  border-right: 6px solid transparent;
-  border-bottom: 350px solid #4b4b4b;
-  border-left: 6px solid transparent;
-}
+    .connector {
+      position: relative;
+      width: 20px;
+      height: 40px;
+      background: linear-gradient(to right, #4b4b4b, #9c9c9c);
+      clip-path: polygon(74% 100%, 74% 85%, 82% 65%, 100% 49%, 100% 0%, 2% 0%, 28% 15%, 37% 26%, 39% 40%, 42% 100%)
+    }
 
-.ground {
-  width: 100vw;
-  height: 50px;
-  background: linear-gradient(#385719, #273b13);
-}
+    .bottom {
+      width: 8px;
+      border-right: 6px solid transparent;
+      border-bottom: 350px solid #4b4b4b;
+      border-left: 6px solid transparent;
+    }
+
+    .ground {
+      width: 100vw;
+      height: 50px;
+      background: linear-gradient(#385719, #273b13);
+    }
   </style>
+  <header class="art-page-header">
+    <a href="index.html" class="app-text-link">
+      <span>index.html</span>
+    </a>
+  </header>
   <div class="content">
     <div class="windmills">
       <div class="windmill">
